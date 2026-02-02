@@ -18,12 +18,12 @@ jobs:
         with:
           path: main-repo
 
-      # 优化：直接 checkout 公开仓库，无需 token
-      - name: Checkout skills-data-hub
-        uses: actions/checkout@v4
-        with:
-          repository: buzhangsan/skills-data-hub
-          path: data-hub
+      # 使用 PAT 访问私有仓库 skills-data-hub
+      - name: Clone skills-data-hub
+        env:
+          DATA_HUB_PAT: ${{ secrets.DATA_HUB_PAT }}
+        run: |
+          git clone --depth 1 --single-branch https://x-access-token:${DATA_HUB_PAT}@github.com/buzhangsan/skills-data-hub.git data-hub
 
       - name: Setup Node.js
         uses: actions/setup-node@v4
