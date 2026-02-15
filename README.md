@@ -4,8 +4,6 @@
 
 A desktop application for managing Claude Code Skills, supporting browsing, installation, import, and security scanning for system-level and project-level Skills.
 
-![Screenshot](./src/assets/d5a32d32fda7567c59c55cecd707a5a4.jpg)
-
 ## Quick Start
 
 Download the latest version directly from [Releases](https://github.com/buzhangsan/skills-manager-client/releases).
